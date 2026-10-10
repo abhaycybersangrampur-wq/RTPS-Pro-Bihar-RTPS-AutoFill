@@ -1,18 +1,128 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bihar RTPS Pro Extension</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAAJ CYBER CAFE | RTPS Extension</title>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#f1f5ff;color:#172554;text-align:center}header{background:#0756c9;color:white;padding:28px 12px}main{max-width:700px;margin:25px auto;padding:12px}section{background:white;border-radius:14px;padding:24px;margin-bottom:18px;box-shadow:0 3px 12px #0001}.btn{display:inline-block;background:#0756c9;color:white;text-decoration:none;padding:12px 16px;border-radius:8px;margin:6px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033}
+header{background:linear-gradient(135deg,#071b49,#0755a5);color:white;text-align:center;padding:28px 15px}
+header h1{margin:0;font-size:27px}
+header p{margin:10px 0 0}
+nav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.btn{display:inline-block;padding:12px 17px;border:0;border-radius:9px;text-decoration:none;font-weight:bold;cursor:pointer;font-size:15px}
+.green{background:#16a34a;color:white}
+.blue{background:#0755a5;color:white}
+.orange{background:#f59e0b;color:#111827}
+main{max-width:900px;margin:22px auto;padding:0 14px}
+.card{background:white;border-radius:14px;padding:20px;margin-bottom:17px;box-shadow:0 4px 16px #0000000d}
+.card h2{margin-top:0;font-size:21px}
+.price{font-size:25px;font-weight:bold;color:#087443}
+.status{font-size:14px;color:#475569;margin:12px 0}
+.download{display:none;margin-top:12px}
+input{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;margin:8px 0}
+.servicegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.servicegrid a{display:block;background:#eff6ff;color:#123b75;padding:14px;border-radius:8px;text-decoration:none;font-weight:bold}
+footer{text-align:center;background:#071b49;color:white;padding:22px}
+.small{font-size:13px;color:#64748b;line-height:1.6}
 </style>
 </head>
 <body>
-<header><h1>Bihar RTPS Pro Extension</h1><p>बिहार RTPS फॉर्म भरना अब आसान</p></header>
+
+<header>
+  <h1>RAAJ CYBER CAFE</h1>
+  <p>बिहार RTPS Auto Fill Extension और ऑनलाइन सेवाएँ</p>
+  <nav>
+    <a class="btn green" href="tel:9069128136">📞 कॉल करें: 9069128136</a>
+    <a class="btn" style="background:#25D366;color:#063b19"
+       href="https://whatsapp.com/channel/0029VbE6O0jDjiOZHHrTmW1t"
+       target="_blank" rel="noopener">WhatsApp चैनल</a>
+  </nav>
+</header>
+
 <main>
-<section><h2>हमारी Extension</h2><p>जाति, आवासीय और आय प्रमाण पत्र के फॉर्म भरने में सहायता पाएँ।</p><p>जानकारी जाँचकर ही फॉर्म सबमिट करें।</p><a class="btn" href="https://github.com/abhaycybersangrampur-wq/RTPS-Pro-Bihar-RTPS-AutoFill">GitHub पर जाएँ</a><a class="btn" href="https://github.com/abhaycybersangrampur-wq/RTPS-Pro-Bihar-RTPS-AutoFill/archive/refs/heads/main.zip">ZIP डाउनलोड करें</a></section>
-<section><h2>मुख्य सुविधाएँ</h2><p>ऑटोफिल सहायता • जानकारी सेव करने में सहायता • आसान उपयोग</p></section>
-<section><h2>ब्राउज़र सपोर्ट</h2><p>Firefox, Chrome और Microsoft Edge के आधिकारिक स्टोर लिंक प्रकाशित होने पर यहाँ जोड़ें।</p></section>
-</main><footer>© 2026 Bihar RTPS Pro Extension</footer>
-</body></html>
+  <section class="card">
+    <h2>🧩 RTPS एक्सटेंशन</h2>
+    <p>अपनी जरूरत के अनुसार एक्सटेंशन चुनें। प्रत्येक एक्सटेंशन का पेमेंट अलग है।</p>
+    <p class="small">सुरक्षा सूचना: नीचे दिया गया HTML अकेले पेमेंट सत्यापित नहीं करता। असली भुगतान पुष्टि के लिए सर्वर सेटअप आवश्यक है।</p>
+  </section>
+
+  <section class="card">
+    <h2>1. Bihar RTPS Auto Save & Fill</h2>
+    <p>बिहार RTPS फॉर्म भरने में सहायता के लिए।</p>
+    <div class="price">₹499</div>
+    <p class="status" id="status1">पेमेंट के बाद एक्सटेंशन का लिंक उपलब्ध होगा।</p>
+    <button class="btn blue" onclick="pay('one')">₹499 पेमेंट करें</button>
+    <div class="download" id="download1">
+      <a class="btn green"
+         href="https://addons.mozilla.org/en-US/firefox/addon/bihar-rtps-auto-save-fill/"
+         target="_blank" rel="noopener">एक्सटेंशन खोलें</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>2. RTPS Bihar Autofill Fast</h2>
+    <p>RTPS ऑटोफिल के लिए दूसरा एक्सटेंशन।</p>
+    <div class="price">₹399</div>
+    <p class="status" id="status2">पेमेंट के बाद एक्सटेंशन का लिंक उपलब्ध होगा।</p>
+    <button class="btn blue" onclick="pay('two')">₹399 पेमेंट करें</button>
+    <div class="download" id="download2">
+      <a class="btn green"
+         href="https://addons.mozilla.org/en-US/firefox/addon/rtps-bihar-autofill-fast/"
+         target="_blank" rel="noopener">एक्सटेंशन खोलें</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🖥️ साइबर कैफे ऑनलाइन सेवाएँ</h2>
+    <div class="servicegrid">
+      <a href="https://serviceonline.bihar.gov.in/" target="_blank" rel="noopener">RTPS जाति, आय, निवास</a>
+      <a href="https://myaadhaar.uidai.gov.in/" target="_blank" rel="noopener">आधार सेवाएँ</a>
+      <a href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" target="_blank" rel="noopener">PAN कार्ड</a>
+      <a href="https://voters.eci.gov.in/" target="_blank" rel="noopener">वोटर कार्ड</a>
+      <a href="https://rtionline.bihar.gov.in/" target="_blank" rel="noopener">बिहार ऑनलाइन सेवाएँ</a>
+      <a href="https://passportindia.gov.in/" target="_blank" rel="noopener">पासपोर्ट</a>
+      <a href="https://beneficiary.nha.gov.in/" target="_blank" rel="noopener">आयुष्मान भारत</a>
+      <a href="https://eshram.gov.in/" target="_blank" rel="noopener">ई-श्रम कार्ड</a>
+      <a href="https://pmkisan.gov.in/" target="_blank" rel="noopener">PM किसान</a>
+      <a href="https://www.irctc.co.in/" target="_blank" rel="noopener">रेलवे टिकट</a>
+      <a href="https://www.nvsp.in/" target="_blank" rel="noopener">वोटर जानकारी</a>
+      <a href="https://medhasoft.bihar.gov.in/" target="_blank" rel="noopener">बिहार स्कॉलरशिप</a>
+      <a href="https://ofssbihar.net/" target="_blank" rel="noopener">OFSS बिहार</a>
+      <a href="https://bpsc.bihar.gov.in/" target="_blank" rel="noopener">BPSC भर्ती</a>
+      <a href="https://ssc.gov.in/" target="_blank" rel="noopener">SSC भर्ती</a>
+      <a href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener">रेलवे भर्ती</a>
+      <a href="https://parivahan.gov.in/" target="_blank" rel="noopener">DL / RC सेवाएँ</a>
+      <a href="https://www.npci.org.in/" target="_blank" rel="noopener">डिजिटल पेमेंट जानकारी</a>
+    </div>
+    <p class="small">ये लिंक संबंधित पोर्टल खोलते हैं। आवेदन, पात्रता और शुल्क संबंधित आधिकारिक वेबसाइट पर जाँचें।</p>
+  </section>
+</main>
+
+<footer>
+  <strong>RAAJ CYBER CAFE</strong>
+  <p>📞 <a href="tel:9069128136" style="color:white">9069128136</a></p>
+  <a class="btn green"
+     href="https://whatsapp.com/channel/0029VbE6O0jDjiOZHHrTmW1t"
+     target="_blank" rel="noopener">WhatsApp चैनल जॉइन करें</a>
+</footer>
+
+<script>
+function pay(which){
+  /*
+   * यहाँ Razorpay की वास्तविक Key ID और server-side order
+   * creation/payment verification जोड़ना जरूरी है।
+   * केवल HTML/JavaScript से भुगतान की पुष्टि सुरक्षित नहीं होती।
+   */
+  alert(
+    "पेमेंट सिस्टम अभी कॉन्फ़िगर नहीं है। " +
+    "पहले Razorpay अकाउंट और सुरक्षित सर्वर-साइड पेमेंट वेरिफिकेशन जोड़ें।"
+  );
+}
+</script>
+
+</body>
+</html>
