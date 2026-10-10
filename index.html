@@ -143,7 +143,7 @@ const groups = [
 ]]
 ];
 const root=document.getElementById('services');
-groups.forEach(([name,items])=>{const section=document.createElement('section');section.className='group';section.innerHTML='<h2>'+name+'</h2>';items.forEach(([label,url])=>{const a=document.createElement('a');a.className='service';a.href=url;a.textContent=label;a.dataset.category=name;a.dataset.url=url;a.dataset.search=(name+' '+label).toLowerCase();a.setAttribute('aria-label',label+' का विवरण देखें');a.addEventListener('click',function(event){event.preventDefault();openServiceDetails(label,name,url)});section.appendChild(a)});root.appendChild(section)});
+groups.forEach(([name,items])=>{const section=document.createElement('section');section.className='group';section.innerHTML='<h2>'+name+'</h2>';items.forEach(([label,url])=>{const a=document.createElement('a');a.className='service';a.href=url;a.target='_blank';a.rel='noopener';a.textContent=label;a.dataset.category=name;a.dataset.url=url;a.dataset.search=(name+' '+label).toLowerCase();a.setAttribute('aria-label',label+' की आधिकारिक वेबसाइट सीधे खोलें');section.appendChild(a)});root.appendChild(section)});
 function openServiceDetails(label,category,url){
  document.getElementById('detailTitle').textContent=label+' — पूरी जानकारी';
  document.getElementById('detailCategory').textContent='श्रेणी: '+category;
