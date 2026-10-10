@@ -29,6 +29,14 @@ footer{text-align:center;padding:24px 12px;color:#5d6a79;font-size:13px}
 .float{position:fixed;right:8px;bottom:14px;display:grid;gap:7px;z-index:5}.float a{font-size:13px;padding:10px 12px;box-shadow:0 2px 8px #0002}
 @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.extensions{grid-template-columns:1fr}header h1{font-size:21px}}
 @media(max-width:460px){.grid{grid-template-columns:1fr}.service{font-size:15px}.float{right:5px;bottom:8px}.float a{padding:8px;font-size:12px}}
+
+.detail-overlay{position:fixed;inset:0;background:#0008;z-index:20;display:none;overflow:auto;padding:16px}
+.detail-panel{max-width:760px;margin:24px auto;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px #0003}
+.detail-panel h2{color:var(--navy);margin-top:0}.detail-panel p,.detail-panel li{line-height:1.65}
+.detail-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.detail-close{float:right;background:#edf2f7;color:#243447;border:0;border-radius:7px;padding:8px 12px;font-weight:bold;cursor:pointer}
+.portal-url{overflow-wrap:anywhere;color:#0879d9}
+@media(max-width:460px){.detail-overlay{padding:8px}.detail-panel{margin:8px auto;padding:15px}}
+
 </style>
 </head>
 <body>
@@ -48,6 +56,25 @@ footer{text-align:center;padding:24px 12px;color:#5d6a79;font-size:13px}
 </div>
 <p id="count" aria-live="polite"></p>
 <div class="grid" id="services"></div>
+<div class="detail-overlay" id="serviceDetail" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <div class="detail-panel">
+    <button class="detail-close" type="button" onclick="closeServiceDetails()">✕ बंद करें</button>
+    <h2 id="detailTitle">सेवा का विवरण</h2>
+    <p id="detailCategory"></p>
+    <p id="detailDescription"></p>
+    <h3>आवेदन से पहले ध्यान दें</h3>
+    <ul>
+      <li>पात्रता, जरूरी दस्तावेज़, शुल्क और अंतिम तारीख सेवा के अनुसार अलग हो सकते हैं। आधिकारिक पोर्टल पर वर्तमान जानकारी जाँचें।</li>
+      <li>आधार, मोबाइल नंबर, प्रमाणपत्र या अन्य दस्तावेज़ केवल तभी दें जब आधिकारिक पोर्टल माँगे।</li>
+      <li>किसी एजेंट को भुगतान करने से पहले सरकारी पोर्टल पर शुल्क की पुष्टि करें।</li>
+    </ul>
+    <p><strong>आधिकारिक वेबसाइट:</strong> <span class="portal-url" id="detailUrl"></span></p>
+    <div class="detail-actions">
+      <a class="btn tools" id="applyLink" href="#" target="_blank" rel="noopener">आधिकारिक वेबसाइट पर जाएँ / Apply करें</a>
+      <button class="btn home" type="button" onclick="closeServiceDetails()">वापस सेवाओं पर जाएँ</button>
+    </div>
+  </div>
+</div>
 
 <section class="section" id="scanner">
 <h2>स्कैनर / दस्तावेज़ सहायता</h2>
@@ -61,17 +88,19 @@ footer{text-align:center;padding:24px 12px;color:#5d6a79;font-size:13px}
 <h2>दो एक्सटेंशन जोड़ें</h2>
 <div class="extensions">
 <div class="ext">
-<h3>Extension 1</h3>
-<p>पहले एक्सटेंशन का नाम, विवरण और ZIP/स्टोर लिंक यहाँ जोड़ें।</p>
-<a class="btn tools" href="#" onclick="alert('पहले एक्सटेंशन की सही ZIP या आधिकारिक स्टोर लिंक जोड़नी होगी।');return false">Extension 1 खोलें</a>
+<h3>Bihar RTPS Auto Save Fill</h3>
+<p>बिहार RTPS वेबसाइट पर फॉर्म भरने में सहायता करने वाला Firefox एक्सटेंशन।</p>
+<p><strong>भुगतान: ₹499</strong></p>
+<a class="btn tools" href="https://addons.mozilla.org/en-US/firefox/addon/bihar-rtps-auto-save-fill/" target="_blank" rel="noopener">एक्सटेंशन खोलें / खरीदें</a>
 </div>
 <div class="ext">
-<h3>Extension 2</h3>
-<p>दूसरे एक्सटेंशन का नाम, विवरण और ZIP/स्टोर लिंक यहाँ जोड़ें।</p>
-<a class="btn tools" href="#" onclick="alert('दूसरे एक्सटेंशन की सही ZIP या आधिकारिक स्टोर लिंक जोड़नी होगी।');return false">Extension 2 खोलें</a>
+<h3>RTPS Bihar Autofill Fast</h3>
+<p>बिहार RTPS फॉर्म के लिए तेज़ ऑटोफिल सहायता वाला Firefox एक्सटेंशन।</p>
+<p><strong>भुगतान: ₹399</strong></p>
+<a class="btn tools" href="https://addons.mozilla.org/en-US/firefox/addon/rtps-bihar-autofill-fast/" target="_blank" rel="noopener">एक्सटेंशन खोलें / खरीदें</a>
 </div>
 </div>
-<p class="warning">दोनों एक्सटेंशन के वास्तविक डाउनलोड लिंक/ZIP अभी उपलब्ध नहीं हैं, इसलिए ये बटन फिलहाल नमूना हैं। ZIP फ़ाइलें या आधिकारिक लिंक मिलने पर इन्हें चालू किया जा सकता है।</p>
+<p class="warning">भुगतान करने से पहले एक्सटेंशन के आधिकारिक Firefox पेज पर विवरण और उपलब्ध भुगतान/लाइसेंस प्रक्रिया जाँच लें।</p>
 </section>
 
 <section class="section">
@@ -82,7 +111,7 @@ footer{text-align:center;padding:24px 12px;color:#5d6a79;font-size:13px}
 </section>
 </main>
 <div class="float">
-<a class="btn wa" href="https://wa.me/917520742878" target="_blank" rel="noopener">WhatsApp संपर्क</a>
+<a class="btn wa" href="https://wa.me/919069128136" target="_blank" rel="noopener">WhatsApp संपर्क</a>
 <a class="btn channel" href="https://whatsapp.com/channel/0029Vb7lJ3BHQbS43k348l2a" target="_blank" rel="noopener">WhatsApp Channel</a>
 </div>
 <footer>© Sarkari Kaam · आधिकारिक वेबसाइटों पर ही जानकारी जाँचें।</footer>
@@ -114,8 +143,33 @@ const groups = [
 ]]
 ];
 const root=document.getElementById('services');
-groups.forEach(([name,items])=>{const section=document.createElement('section');section.className='group';section.innerHTML='<h2>'+name+'</h2>';items.forEach(([label,url])=>{const a=document.createElement('a');a.className='service';a.href=url;a.target='_blank';a.rel='noopener';a.textContent=label;a.dataset.search=(name+' '+label).toLowerCase();section.appendChild(a)});root.appendChild(section)});
-function searchServices(){const q=document.getElementById('search').value.trim().toLowerCase();let shown=0;document.querySelectorAll('.service').forEach(a=>{const yes=!q||a.dataset.search.includes(q);a.style.display=yes?'flex':'none';if(yes)shown++});document.querySelectorAll('.group').forEach(g=>{g.style.display=[...g.querySelectorAll('.service')].some(a=>a.style.display!=='none')?'block':'none'});document.getElementById('count').textContent=q?shown+' सेवाएँ मिलीं':''}
+groups.forEach(([name,items])=>{const section=document.createElement('section');section.className='group';section.innerHTML='<h2>'+name+'</h2>';items.forEach(([label,url])=>{const a=document.createElement('a');a.className='service';a.href=url;a.textContent=label;a.dataset.category=name;a.dataset.url=url;a.dataset.search=(name+' '+label).toLowerCase();a.setAttribute('aria-label',label+' का विवरण देखें');a.addEventListener('click',function(event){event.preventDefault();openServiceDetails(label,name,url)});section.appendChild(a)});root.appendChild(section)});
+function openServiceDetails(label,category,url){
+ document.getElementById('detailTitle').textContent=label+' — पूरी जानकारी';
+ document.getElementById('detailCategory').textContent='श्रेणी: '+category;
+ document.getElementById('detailDescription').textContent='यह सेवा '+label+' से संबंधित जानकारी, आवेदन या स्थिति जाँच के लिए संबंधित आधिकारिक पोर्टल पर ले जाती है। नीचे दिए गए Apply बटन से आधिकारिक वेबसाइट खोलें। वहाँ उपलब्ध निर्देशों के अनुसार फॉर्म भरें और आवश्यक दस्तावेज़ जमा करें।';
+ document.getElementById('detailUrl').textContent=url;
+ document.getElementById('applyLink').href=url;
+ document.getElementById('serviceDetail').style.display='block';
+ document.body.style.overflow='hidden';
+}
+function closeServiceDetails(){document.getElementById('serviceDetail').style.display='none';document.body.style.overflow=''}
+document.getElementById('serviceDetail').addEventListener('click',function(e){if(e.target===this)closeServiceDetails()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeServiceDetails()});
+function searchServices(){
+const q=document.getElementById('search').value.trim().toLocaleLowerCase('hi').replace(/\\s+/g,' ');
+let shown=0;
+document.querySelectorAll('.service').forEach(a=>{
+const hay=(a.dataset.search+' '+a.textContent).toLocaleLowerCase('hi');
+const yes=!q||hay.includes(q);
+a.style.display=yes?'flex':'none';
+if(yes)shown++;
+});
+document.querySelectorAll('.group').forEach(g=>{
+g.style.display=[...g.querySelectorAll('.service')].some(a=>a.style.display!=='none')?'block':'none';
+});
+document.getElementById('count').textContent=q?shown+' सेवाएँ मिलीं':'';
+}
 document.getElementById('search').addEventListener('input',searchServices);
 </script>
 </body>
