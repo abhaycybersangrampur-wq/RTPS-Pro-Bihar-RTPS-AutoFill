@@ -37,64 +37,6 @@ footer{text-align:center;padding:24px 12px;color:#5d6a79;font-size:13px}
 .portal-url{overflow-wrap:anywhere;color:#0879d9}
 @media(max-width:460px){.detail-overlay{padding:8px}.detail-panel{margin:8px auto;padding:15px}}
 
-
-/* Sarkari Tools: added without replacing existing site styles */
-#sarkari-tools .tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-#sarkari-tools .tool-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0}
-#sarkari-tools .tool-card h3{margin:0 0 10px;color:var(--navy)}
-#sarkari-tools .tool-card input,#sarkari-tools .tool-card select{width:100%;padding:10px;margin:6px 0;border:1px solid #bcc8d4;border-radius:6px;background:#fff}
-#sarkari-tools .tool-preview{display:block;max-width:100%;max-height:280px;object-fit:contain;margin:10px auto;border:1px dashed #aebdca;background:#f7f9fc}
-#sarkari-tools .tool-note{font-size:13px;line-height:1.5;color:#596879}
-#sarkari-tools .tool-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-#sarkari-tools .tool-actions button{border:0;border-radius:7px;padding:10px 13px;background:#0879d9;color:#fff;font-weight:bold;cursor:pointer}
-#sarkari-tools .tool-actions button.secondary{background:#173b61}
-#sarkari-tools .print-sheet{display:none}
-@media(max-width:760px){#sarkari-tools .tool-grid{grid-template-columns:1fr}}
-@media print{body.print-tools *{visibility:hidden!important}body.print-tools #printArea,body.print-tools #printArea *{visibility:visible!important}body.print-tools #printArea{display:block!important;position:absolute;left:0;top:0;width:100%;padding:0;margin:0}body.print-tools #printArea img{max-width:100%;height:auto}body.print-tools #printArea .print-item{break-inside:avoid;page-break-inside:avoid;margin:5mm auto;text-align:center}body.print-tools #printArea .a4{width:210mm;min-height:297mm;padding:8mm;box-sizing:border-box}body.print-tools #printArea .card{width:85.6mm;height:54mm;object-fit:contain;margin:3mm;border:1px solid #aaa}body.print-tools #printArea .photo{width:35mm;height:45mm;object-fit:contain;margin:3mm}body.print-tools header,body.print-tools footer{display:none!important}}
-
-
-/* Added card-cropping suite; original site styles remain intact */
-#card-crop-suite .crop-suite-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
-#card-crop-suite .crop-extra-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
-#card-crop-suite .crop-tool{box-shadow:0 2px 7px #18334d12;background:#f0f4fa}
-#card-crop-suite .tool-card input[type=file]{font-size:13px}
-#card-crop-suite canvas.tool-preview{width:100%;height:auto;max-height:340px}
-#card-crop-suite .tool-card label{display:block;margin-top:7px;font-size:14px}
-@media(max-width:760px){#card-crop-suite .crop-suite-grid,#card-crop-suite .crop-extra-grid{grid-template-columns:1fr}}
-
-/* PDF card auto-crop add-on; isolated styles preserve existing site design */
-#pdf-auto-crop-tool{margin-top:14px}#pdf-auto-crop-tool .pdf-control-row{display:grid;grid-template-columns:auto minmax(70px,110px) auto minmax(150px,1fr);gap:8px;align-items:center;margin:8px 0}#pdf-auto-crop-tool input,#pdf-auto-crop-tool select{min-width:0;padding:9px;border:1px solid #bcc8d4;border-radius:6px;background:#fff}#pdf-auto-crop-tool .pdf-canvas-wrap{position:relative;display:flex;align-items:center;justify-content:center;min-height:110px;padding:8px;background:#f7f9fc;border:1px dashed #aebdca;overflow:auto}#pdf-card-canvas{display:block;max-width:100%;height:auto;touch-action:none;cursor:crosshair}#pdf-card-empty{color:#596879;font-size:14px;padding:25px;text-align:center}#pdf-auto-crop-tool .pdf-result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}#pdf-auto-crop-tool .pdf-result-grid canvas{max-width:100%;height:auto;border:1px solid #d4dce4;background:white}#pdf-auto-crop-tool h4{margin:8px 0;color:var(--navy)}@media(max-width:600px){#pdf-auto-crop-tool .pdf-control-row{grid-template-columns:1fr 1fr}#pdf-auto-crop-tool .pdf-result-grid{grid-template-columns:1fr}}
-
-
-/* Professional colorful styling for Sarkari service categories only */
-#services .group{
-  border:1px solid #d9e3ef;border-radius:12px;padding:7px;
-  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
-  box-shadow:0 4px 14px rgba(25,55,90,.08);
-  overflow:hidden;transition:box-shadow .2s ease,transform .2s ease
-}
-#services .group h2{
-  border-radius:8px;background:linear-gradient(120deg,#075985,#0879d9 58%,#06a6a6);
-  box-shadow:0 3px 8px rgba(8,121,217,.18);letter-spacing:.1px
-}
-#services .service{
-  border:1px solid #e0e8f1;border-left:3px solid #1685d5;
-  border-radius:7px;background:linear-gradient(110deg,#fff 0%,#f8fbff 100%);
-  box-shadow:0 1px 3px rgba(24,55,85,.04);
-  transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease
-}
-#services .service:before{
-  content:"✓";display:inline-flex;align-items:center;justify-content:center;
-  flex:0 0 19px;width:19px;height:19px;margin-top:0;
-  color:#fff;background:linear-gradient(135deg,#08a85a,#0d9488);
-  font-size:12px;border-radius:50%;box-shadow:0 2px 5px #08a85a30
-}
-#services .service:hover{
-  background:linear-gradient(110deg,#eaf6ff,#e9fbf4);
-  border-color:#70b7eb;border-left-color:#08a85a;
-  box-shadow:0 3px 10px rgba(8,121,217,.12);transform:translateY(-1px)
-}
-@media(prefers-reduced-motion:reduce){#services .group,#services .service{transition:none}}
 </style>
 </head>
 <body>
@@ -104,7 +46,7 @@ footer{text-align:center;padding:24px 12px;color:#5d6a79;font-size:13px}
 </header>
 <main class="wrap">
 <div class="actions">
-<a class="btn tools" href="#sarkari-tools">Sarkari Tools</a>
+
 <a class="btn tools" href="#extensions">Extension Tools</a>
 <a class="btn channel" href="https://whatsapp.com/channel/0029Vb7lJ3BHQbS43k348l2a" target="_blank" rel="noopener">WhatsApp Channel Join करें</a>
 </div>
@@ -135,5 +77,147 @@ footer{text-align:center;padding:24px 12px;color:#5d6a79;font-size:13px}
 </div>
 
 
-<section class="section" id="sarkari-tools">
-<h2>सरकारी टूल्स / Photo & Card Print</h2><div style="display:flex;align-items:center;gap:12px;margin:10px 0"><img src="data:image/png;base64,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
+<section class="section" id="photo-enhancer">
+<h2>फोटो HD Enhance करें</h2>
+<div class="info">
+  <p>अपनी फोटो चुनें, HD आकार में बेहतर करें और डाउनलोड करें। यह टूल इसी ब्राउज़र में फोटो प्रोसेस करता है।</p>
+  <p><label for="photoInput"><strong>फोटो चुनें:</strong></label>
+  <input id="photoInput" type="file" accept="image/*"></p>
+  <p><label for="photoScale"><strong>HD आकार:</strong></label>
+  <select id="photoScale">
+    <option value="2">2× HD</option>
+    <option value="3">3× HD</option>
+    <option value="4">4× HD</option>
+  </select></p>
+  <p><label for="photoSharp"><strong>Enhance / शार्पनेस:</strong></label>
+  <input id="photoSharp" type="range" min="0" max="100" value="35">
+  <span id="photoSharpValue">35%</span></p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
+    <button class="btn tools" id="enhancePhotoBtn" type="button">HD Enhance करें</button>
+    <a class="btn home" id="downloadEnhancedPhoto" download="sarkari-tour-hd-photo.png" style="display:none">HD फोटो डाउनलोड करें</a>
+  </div>
+  <p id="photoStatus" aria-live="polite">पहले फोटो चुनें।</p>
+  <img id="photoPreview" alt="HD फोटो प्रीव्यू" style="display:none;max-width:100%;height:auto;border:1px solid #d4dce4;border-radius:6px">
+  <p class="warning">नोट: यह टूल फोटो को बड़ा करके हल्का contrast/sharpness सुधारता है। इससे धुंधली फोटो का असली विवरण पूरी तरह वापस नहीं आता।</p>
+</div>
+</section>
+
+<section class="section" id="scanner">
+<h2>स्कैनर / दस्तावेज़ सहायता</h2>
+<div class="info">
+<p>दस्तावेज़ स्कैन करने या PDF टूल इस्तेमाल करने के लिए नीचे दिए गए टूल/एक्सटेंशन देखें।</p>
+<p class="warning">ध्यान दें: वेबसाइट अपने-आप ब्राउज़र की अनुमति (permission) नहीं दे सकती। एक्सटेंशन इंस्टॉल करने के बाद ब्राउज़र के दिखाए गए अनुमति संदेश को स्वयं पढ़कर स्वीकार करें।</p>
+</div>
+</section>
+
+<section class="section" id="extensions">
+<h2>दो एक्सटेंशन जोड़ें</h2>
+<div class="extensions">
+<div class="ext">
+<h3>Bihar RTPS Auto Save Fill</h3>
+<p>बिहार RTPS वेबसाइट पर फॉर्म भरने में सहायता करने वाला Firefox एक्सटेंशन।</p>
+<p><strong>भुगतान: ₹499</strong></p>
+<a class="btn tools" href="https://addons.mozilla.org/en-US/firefox/addon/bihar-rtps-auto-save-fill/" target="_blank" rel="noopener">एक्सटेंशन खोलें / खरीदें</a>
+</div>
+<div class="ext">
+<h3>RTPS Bihar Autofill Fast</h3>
+<p>बिहार RTPS फॉर्म के लिए तेज़ ऑटोफिल सहायता वाला Firefox एक्सटेंशन।</p>
+<p><strong>भुगतान: ₹399</strong></p>
+<a class="btn tools" href="https://addons.mozilla.org/en-US/firefox/addon/rtps-bihar-autofill-fast/" target="_blank" rel="noopener">एक्सटेंशन खोलें / खरीदें</a>
+</div>
+</div>
+<p class="warning">भुगतान करने से पहले एक्सटेंशन के आधिकारिक Firefox पेज पर विवरण और उपलब्ध भुगतान/लाइसेंस प्रक्रिया जाँच लें।</p>
+</section>
+
+<section class="section">
+<h2>सरकारी काम – उपयोगी जानकारी</h2>
+<div class="info">
+<p>किसी सेवा पर क्लिक करने से संबंधित आधिकारिक पोर्टल खुलता है, जहाँ उपलब्ध होने पर आवेदन, स्थिति जाँच या जानकारी प्राप्त की जा सकती है। कुछ सेवाओं के लिए लॉगिन, दस्तावेज़ या शुल्क आवश्यक हो सकते हैं। आवेदन करने से पहले वेबसाइट का पता और विवरण जाँच लें।</p>
+</div>
+</section>
+</main>
+<div class="float">
+<a class="btn wa" href="https://wa.me/919069128136" target="_blank" rel="noopener">WhatsApp संपर्क</a>
+<a class="btn channel" href="https://whatsapp.com/channel/0029Vb7lJ3BHQbS43k348l2a" target="_blank" rel="noopener">WhatsApp Channel</a>
+</div>
+<footer>© Sarkari Kaam · आधिकारिक वेबसाइटों पर ही जानकारी जाँचें।</footer>
+<script>
+const groups = [
+["नया लिंक",[
+["नया वोटर लिस्ट 2026","https://voters.eci.gov.in/"],["जनगणना 2027 अपडेट","https://censusindia.gov.in/"],["ड्राइविंग लाइसेंस / RC सेवाएँ","https://parivahan.gov.in/"],["Farmer Registry","https://agristack.gov.in/"],["वोटर कार्ड आवेदन / सुधार","https://voters.eci.gov.in/"],["बिहार RTPS सेवाएँ","https://serviceonline.bihar.gov.in/"],["बिहार जाति प्रमाणपत्र","https://serviceonline.bihar.gov.in/"],["बिहार आय प्रमाणपत्र","https://serviceonline.bihar.gov.in/"],["बिहार निवास प्रमाणपत्र","https://serviceonline.bihar.gov.in/"],["पासपोर्ट आवेदन","https://www.passportindia.gov.in/"],["पैन कार्ड आवेदन / सुधार","https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html"],["आधार आधिकारिक पोर्टल","https://uidai.gov.in/"],["रेलवे टिकट बुकिंग","https://www.irctc.co.in/"],["बिहार बोर्ड रिजल्ट","https://results.biharboardonline.com/"],["स्कॉलरशिप पोर्टल","https://medhasoft.bihar.gov.in/"],["ई-श्रम कार्ड","https://eshram.gov.in/"],["ABHA हेल्थ ID","https://abha.abdm.gov.in/"],["आयुष्मान भारत","https://beneficiary.nha.gov.in/"],["EPFO सेवाएँ","https://www.epfindia.gov.in/"],["डिजिलॉकर","https://www.digilocker.gov.in/"]
+]],
+["चुनाव एवं पहचान",[
+["वोटर लिस्ट / नाम खोजें","https://electoralsearch.eci.gov.in/"],["वोटर कार्ड नया आवेदन","https://voters.eci.gov.in/"],["वोटर कार्ड सुधार","https://voters.eci.gov.in/"],["वोटर कार्ड डाउनलोड","https://voters.eci.gov.in/"],["आधार डाउनलोड","https://myaadhaar.uidai.gov.in/"],["आधार अपडेट जानकारी","https://uidai.gov.in/"],["PAN कार्ड सेवाएँ","https://www.incometax.gov.in/"],["पासपोर्ट सेवाएँ","https://www.passportindia.gov.in/"],["जन्म प्रमाणपत्र जानकारी","https://crsorgi.gov.in/"],["डिजिलॉकर दस्तावेज़","https://www.digilocker.gov.in/"],["परिवार पहचान / राज्य सेवाएँ","https://serviceonline.bihar.gov.in/"],["जाति प्रमाणपत्र","https://serviceonline.bihar.gov.in/"],["आय प्रमाणपत्र","https://serviceonline.bihar.gov.in/"],["निवास प्रमाणपत्र","https://serviceonline.bihar.gov.in/"],["राशन कार्ड बिहार","https://epds.bihar.gov.in/"]
+]],
+["सरकारी काम",[
+["आधार कार्ड","https://uidai.gov.in/"],["पैन कार्ड","https://www.incometax.gov.in/"],["पीएम किसान","https://pmkisan.gov.in/"],["वोटर आईडी कार्ड","https://voters.eci.gov.in/"],["गैस सब्सिडी / LPG","https://mylpg.in/"],["LPG eKYC जानकारी","https://mylpg.in/"],["उज्ज्वला योजना","https://www.pmuy.gov.in/"],["बेरोजगारी/रोजगार सेवाएँ","https://www.ncs.gov.in/"],["पीएम आवास ग्रामीण","https://pmayg.nic.in/"],["राशन कार्ड बिहार","https://epds.bihar.gov.in/"],["ई-श्रम कार्ड","https://eshram.gov.in/"],["आयुष्मान कार्ड","https://beneficiary.nha.gov.in/"],["भूलेख / भूमि रिकॉर्ड बिहार","https://biharbhumi.bihar.gov.in/"],["पासपोर्ट सेवा","https://www.passportindia.gov.in/"],["मनरेगा जॉब कार्ड","https://nrega.nic.in/"],["APAAR ID जानकारी","https://apaar.education.gov.in/"],["किसान क्रेडिट कार्ड जानकारी","https://www.myscheme.gov.in/"],["बिहार छात्रवृत्ति","https://medhasoft.bihar.gov.in/"],["रेलवे भर्ती","https://www.rrbcdg.gov.in/"],["SSC भर्ती","https://ssc.gov.in/"],["UPSC भर्ती","https://upsc.gov.in/"],["BPSC भर्ती","https://bpsc.bihar.gov.in/"],["बिहार पुलिस भर्ती","https://csbc.bihar.gov.in/"],["बिहार लोक शिकायत","https://lokshikayat.bihar.gov.in/"],["बिजली बिल बिहार","https://www.sbpdcl.co.in/"],["ऑनलाइन जन्म/मृत्यु प्रमाणपत्र","https://crsorgi.gov.in/"],["ड्राइविंग लाइसेंस","https://parivahan.gov.in/"],["वाहन RC स्थिति","https://parivahan.gov.in/"],["FASTag जानकारी","https://ihmcl.co.in/"],["बैंकिंग / NPCI जानकारी","https://www.npci.org.in/"]
+]],
+["सरकारी योजनाएँ",[
+["MyScheme – सभी योजनाएँ","https://www.myscheme.gov.in/"],["PM किसान सम्मान निधि","https://pmkisan.gov.in/"],["PM आवास योजना","https://pmayg.nic.in/"],["PM उज्ज्वला योजना","https://www.pmuy.gov.in/"],["आयुष्मान भारत योजना","https://beneficiary.nha.gov.in/"],["ई-श्रम योजना","https://eshram.gov.in/"],["राष्ट्रीय छात्रवृत्ति पोर्टल","https://scholarships.gov.in/"],["बिहार पोस्ट मैट्रिक स्कॉलरशिप","https://pmsonline.bih.nic.in/"],["बिहार मेधासॉफ्ट","https://medhasoft.bihar.gov.in/"],["बिहार स्टूडेंट क्रेडिट कार्ड","https://www.7nishchay-yuvaupmission.bihar.gov.in/"],["किसान क्रेडिट कार्ड","https://www.myscheme.gov.in/"],["महिला एवं बाल विकास","https://wcd.gov.in/"],["राष्ट्रीय पेंशन प्रणाली","https://www.npscra.nsdl.co.in/"],["वृद्धावस्था पेंशन बिहार","https://elabharthi.bihar.gov.in/"],["विधवा पेंशन बिहार","https://elabharthi.bihar.gov.in/"],["दिव्यांग पेंशन बिहार","https://elabharthi.bihar.gov.in/"],["जन धन योजना","https://pmjdy.gov.in/"],["मुद्रा लोन जानकारी","https://www.mudra.org.in/"],["PM विश्वकर्मा योजना","https://pmvishwakarma.gov.in/"],["स्टार्टअप इंडिया","https://www.startupindia.gov.in/"]
+]],
+["किसान एवं भूमि",[
+["PM किसान स्थिति","https://pmkisan.gov.in/"],["किसान पंजीकरण बिहार","https://dbtagriculture.bihar.gov.in/"],["Farmer ID / AgriStack","https://agristack.gov.in/"],["कृषि विभाग बिहार","https://state.bihar.gov.in/krishi/"],["फसल बीमा जानकारी","https://pmfby.gov.in/"],["मृदा स्वास्थ्य कार्ड","https://soilhealth.dac.gov.in/"],["किसान क्रेडिट कार्ड जानकारी","https://www.myscheme.gov.in/"],["भूमि रिकॉर्ड बिहार","https://biharbhumi.bihar.gov.in/"],["जमाबंदी पंजी देखें","https://biharbhumi.bihar.gov.in/"],["भू-नक्शा बिहार","https://bhunaksha.bihar.gov.in/"],["दाखिल-खारिज स्थिति","https://biharbhumi.bihar.gov.in/"],["लगान ऑनलाइन","https://biharbhumi.bihar.gov.in/"],["कृषि अनुदान जानकारी","https://dbtagriculture.bihar.gov.in/"],["मौसम जानकारी IMD","https://mausam.imd.gov.in/"],["ई-नाम मंडी","https://www.enam.gov.in/"]
+]],
+["बैंकिंग एवं बिल",[
+["बिजली बिल – SBPDCL","https://www.sbpdcl.co.in/"],["बिजली बिल – NBPDCL","https://www.nbpdcl.co.in/"],["बैंक खाता आधार लिंक जानकारी","https://www.npci.org.in/"],["PF / EPFO पासबुक","https://passbook.epfindia.gov.in/"],["NPS सेवाएँ","https://www.npscra.nsdl.co.in/"],["आयकर ई-फाइलिंग","https://www.incometax.gov.in/"],["GST पोर्टल","https://www.gst.gov.in/"],["डाकघर बचत जानकारी","https://www.indiapost.gov.in/"],["RBI वित्तीय जानकारी","https://www.rbi.org.in/"],["मुद्रा लोन जानकारी","https://www.mudra.org.in/"],["जन धन योजना","https://pmjdy.gov.in/"],["ऑनलाइन शिकायत – RBI","https://cms.rbi.org.in/"],["पेंशन भुगतान जानकारी","https://elabharthi.bihar.gov.in/"],["गैस बुकिंग – My LPG","https://mylpg.in/"],["रेल टिकट","https://www.irctc.co.in/"]
+]],
+["शिक्षा एवं नौकरी",[
+["Bihar Board आधिकारिक वेबसाइट","https://biharboardonline.bihar.gov.in/"],["BSEB रिजल्ट","https://results.biharboardonline.com/"],["OFSS बिहार इंटर एडमिशन","https://ofssbihar.net/"],["MedhaSoft छात्रवृत्ति","https://medhasoft.bihar.gov.in/"],["National Scholarship Portal","https://scholarships.gov.in/"],["DigiLocker मार्कशीट","https://www.digilocker.gov.in/"],["NTA परीक्षा","https://nta.ac.in/"],["SSC भर्ती","https://ssc.gov.in/"],["UPSC भर्ती","https://upsc.gov.in/"],["BPSC भर्ती","https://bpsc.bihar.gov.in/"],["बिहार पुलिस भर्ती","https://csbc.bihar.gov.in/"],["रेलवे भर्ती बोर्ड","https://www.rrbcdg.gov.in/"],["रोजगार पोर्टल NCS","https://www.ncs.gov.in/"],["Apprenticeship India","https://www.apprenticeshipindia.gov.in/"],["AISHE / उच्च शिक्षा","https://aishe.gov.in/"]
+]],
+["यात्रा एवं अन्य सेवाएँ",[
+["IRCTC रेल टिकट","https://www.irctc.co.in/"],["परिवहन / DL / RC","https://parivahan.gov.in/"],["FASTag जानकारी","https://ihmcl.co.in/"],["पासपोर्ट आवेदन","https://www.passportindia.gov.in/"],["भारत पोस्ट सेवाएँ","https://www.indiapost.gov.in/"],["UMANG सेवाएँ","https://web.umang.gov.in/"],["DigiLocker","https://www.digilocker.gov.in/"],["CPGRAMS शिकायत","https://pgportal.gov.in/"],["RTI ऑनलाइन","https://rtionline.gov.in/"],["राष्ट्रीय उपभोक्ता हेल्पलाइन","https://consumerhelpline.gov.in/"],["टेलीमेडिसिन eSanjeevani","https://esanjeevani.mohfw.gov.in/"],["ABHA हेल्थ ID","https://abha.abdm.gov.in/"],["ई-कोर्ट्स केस स्थिति","https://ecourts.gov.in/"],["राष्ट्रीय कानूनी सेवा","https://nalsa.gov.in/"],["सरकारी पोर्टल सूची – भारत","https://www.india.gov.in/"]
+]]
+];
+const root=document.getElementById('services');
+groups.forEach(([name,items])=>{const section=document.createElement('section');section.className='group';section.innerHTML='<h2>'+name+'</h2>';items.forEach(([label,url])=>{const a=document.createElement('a');a.className='service';a.href=url;a.target='_blank';a.rel='noopener';a.textContent=label;a.dataset.category=name;a.dataset.url=url;a.dataset.search=(name+' '+label).toLowerCase();a.setAttribute('aria-label',label+' की आधिकारिक वेबसाइट सीधे खोलें');section.appendChild(a)});root.appendChild(section)});
+function openServiceDetails(label,category,url){
+ document.getElementById('detailTitle').textContent=label+' — पूरी जानकारी';
+ document.getElementById('detailCategory').textContent='श्रेणी: '+category;
+ document.getElementById('detailDescription').textContent='यह सेवा '+label+' से संबंधित जानकारी, आवेदन या स्थिति जाँच के लिए संबंधित आधिकारिक पोर्टल पर ले जाती है। नीचे दिए गए Apply बटन से आधिकारिक वेबसाइट खोलें। वहाँ उपलब्ध निर्देशों के अनुसार फॉर्म भरें और आवश्यक दस्तावेज़ जमा करें।';
+ document.getElementById('detailUrl').textContent=url;
+ document.getElementById('applyLink').href=url;
+ document.getElementById('serviceDetail').style.display='block';
+ document.body.style.overflow='hidden';
+}
+function closeServiceDetails(){document.getElementById('serviceDetail').style.display='none';document.body.style.overflow=''}
+document.getElementById('serviceDetail').addEventListener('click',function(e){if(e.target===this)closeServiceDetails()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeServiceDetails()});
+function searchServices(){
+const q=document.getElementById('search').value.trim().toLocaleLowerCase('hi').replace(/\\s+/g,' ');
+let shown=0;
+document.querySelectorAll('.service').forEach(a=>{
+const hay=(a.dataset.search+' '+a.textContent).toLocaleLowerCase('hi');
+const yes=!q||hay.includes(q);
+a.style.display=yes?'flex':'none';
+if(yes)shown++;
+});
+document.querySelectorAll('.group').forEach(g=>{
+g.style.display=[...g.querySelectorAll('.service')].some(a=>a.style.display!=='none')?'block':'none';
+});
+document.getElementById('count').textContent=q?shown+' सेवाएँ मिलीं':'';
+}
+document.getElementById('search').addEventListener('input',searchServices);
+
+// Photo HD enhancer — separate from the existing services system.
+(function(){
+  const input = document.getElementById('photoInput');
+  const scale = document.getElementById('photoScale');
+  const sharp = document.getElementById('photoSharp');
+  const sharpValue = document.getElementById('photoSharpValue');
+  const button = document.getElementById('enhancePhotoBtn');
+  const download = document.getElementById('downloadEnhancedPhoto');
+  const preview = document.getElementById('photoPreview');
+  const status = document.getElementById('photoStatus');
+  let sourceImage = null;
+
+  sharp.addEventListener('input', function(){ sharpValue.textContent = sharp.value + '%'; });
+  input.addEventListener('change', function(){
+    sourceImage = null;
+    download.style.display = 'none';
+    preview.style.display = 'none';
+    const file = input.files && input.files[0];
+    if (!file) { status.textContent = 'पहले फोटो चुनें।'; return; }
+    if (!file.type.startsWith('image/')) { status.textContent = 'कृपया सही image file चुनें।'; return; }
+    const reader = new FileReader();
+    reader.onload = function(){
+     
