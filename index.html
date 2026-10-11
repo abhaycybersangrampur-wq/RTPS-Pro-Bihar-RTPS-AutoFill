@@ -77,30 +77,7 @@ footer{text-align:center;padding:24px 12px;color:#5d6a79;font-size:13px}
 </div>
 
 
-<section class="section" id="photo-enhancer">
-<h2>फोटो HD Enhance करें</h2>
-<div class="info">
-  <p>अपनी फोटो चुनें, HD आकार में बेहतर करें और डाउनलोड करें। यह टूल इसी ब्राउज़र में फोटो प्रोसेस करता है।</p>
-  <p><label for="photoInput"><strong>फोटो चुनें:</strong></label>
-  <input id="photoInput" type="file" accept="image/*"></p>
-  <p><label for="photoScale"><strong>HD आकार:</strong></label>
-  <select id="photoScale">
-    <option value="2">2× HD</option>
-    <option value="3">3× HD</option>
-    <option value="4">4× HD</option>
-  </select></p>
-  <p><label for="photoSharp"><strong>Enhance / शार्पनेस:</strong></label>
-  <input id="photoSharp" type="range" min="0" max="100" value="35">
-  <span id="photoSharpValue">35%</span></p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
-    <button class="btn tools" id="enhancePhotoBtn" type="button">HD Enhance करें</button>
-    <a class="btn home" id="downloadEnhancedPhoto" download="sarkari-tour-hd-photo.png" style="display:none">HD फोटो डाउनलोड करें</a>
-  </div>
-  <p id="photoStatus" aria-live="polite">पहले फोटो चुनें।</p>
-  <img id="photoPreview" alt="HD फोटो प्रीव्यू" style="display:none;max-width:100%;height:auto;border:1px solid #d4dce4;border-radius:6px">
-  <p class="warning">नोट: यह टूल फोटो को बड़ा करके हल्का contrast/sharpness सुधारता है। इससे धुंधली फोटो का असली विवरण पूरी तरह वापस नहीं आता।</p>
-</div>
-</section>
+
 
 <section class="section" id="scanner">
 <h2>स्कैनर / दस्तावेज़ सहायता</h2>
@@ -198,26 +175,8 @@ document.getElementById('count').textContent=q?shown+' सेवाएँ मि
 }
 document.getElementById('search').addEventListener('input',searchServices);
 
-// Photo HD enhancer — separate from the existing services system.
-(function(){
-  const input = document.getElementById('photoInput');
-  const scale = document.getElementById('photoScale');
-  const sharp = document.getElementById('photoSharp');
-  const sharpValue = document.getElementById('photoSharpValue');
-  const button = document.getElementById('enhancePhotoBtn');
-  const download = document.getElementById('downloadEnhancedPhoto');
-  const preview = document.getElementById('photoPreview');
-  const status = document.getElementById('photoStatus');
-  let sourceImage = null;
 
-  sharp.addEventListener('input', function(){ sharpValue.textContent = sharp.value + '%'; });
-  input.addEventListener('change', function(){
-    sourceImage = null;
-    download.style.display = 'none';
-    preview.style.display = 'none';
-    const file = input.files && input.files[0];
-    if (!file) { status.textContent = 'पहले फोटो चुनें।'; return; }
-    if (!file.type.startsWith('image/')) { status.textContent = 'कृपया सही image file चुनें।'; return; }
-    const reader = new FileReader();
-    reader.onload = function(){
-     
+
+</script>
+</body>
+</html>
